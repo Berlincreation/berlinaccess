@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morgan Muigai | Design & Development</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to enhance visual appeal, using the 'Inter' font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        :root {
+            --primary-text: #e5e7eb; /* Gray-200 */
+            --background-dark: #111827; /* Gray-900 */
+            --card-dark: #1f2937; /* Gray-800 */
+            /* UPDATED ACCENT COLOR to Blue-300 (#93c5fd) for a professional/tech feel */
+            --accent-color: #93c5fd; 
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--primary-text);
+            scroll-behavior: smooth;
+        }
+
+        /* Gallery grid for responsive image layout */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Style for the gallery items */
+        .gallery-item img {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 1/1; /* Default aspect ratio */
+        }
+        
+        /* Make certain items taller for a dynamic look (adjust aspect ratio) */
+        .gallery-item:nth-child(2) img,
+        .gallery-item:nth-child(5) img {
+            aspect-ratio: 4/5; 
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.02);
+            /* Updated shadow color to match the blue accent */
+            box-shadow: 0 10px 15px -3px rgba(147, 197, 253, 0.2), 0 4px 6px -2px rgba(147, 197, 253, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation (Fixed at top) -->
+    <header class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm shadow-lg border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-extrabold tracking-widest text-accent-color uppercase">
+                Morgan Muigai
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#portfolio" class="text-gray-300 hover:text-accent-color transition duration-200">Projects</a>
+                <a href="#about" class="text-gray-300 hover:text-accent-color transition duration-200">Skills & About</a>
+                <a href="#contact" class="text-gray-300 hover:text-accent-color transition duration-200">Contact</a>
+            </nav>
+            <!-- Mobile Menu Toggle (Simplified for single file) -->
+            <button class="md:hidden text-gray-300 hover:text-accent-color focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- 1. Hero Section -->
+        <section id="home" class="relative pt-24 pb-32 md:pt-40 md:pb-48 text-center overflow-hidden">
+            <!-- Background Image Placeholder (Uses a dark gradient overlay for better text contrast) -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/1f2937/fff?text=Professional+Workspace+Mockup');">
+                <div class="absolute inset-0 bg-gray-900 opacity-70"></div>
+            </div>
+            
+            <div class="relative max-w-4xl mx-auto px-4 z-10">
+                <p class="text-xl md:text-2xl font-light mb-4 text-gray-300">IT SOLUTIONS AT YOUR DISPOSAL</p>
+                <h1 class="text-5xl md:text-7xl font-extrabold uppercase leading-tight tracking-tighter text-white">
+                    <span class="text-accent-color">Design.</span> <span class="text-white">Code.</span> <span class="text-accent-color">Strategy.</span>
+                </h1>
+                <div class="mt-10">
+                    <a href="#portfolio" class="inline-block px-8 py-3 bg-blue-500 text-white font-bold rounded-full text-lg shadow-xl hover:bg-blue-400 transition duration-300 transform hover:scale-105">
+                        View Projects
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Portfolio/Gallery Section -->
+        <section id="portfolio" class="py-20 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-12 text-center text-accent-color">Featured Projects</h2>
+            
+            <div class="photo-gallery">
+                
+                <!-- Gallery Item 1 (Onshape 3D design) -->
+                <div class="gallery-item rounded-lg overflow-hidden bg-gray-800 shadow-xl">
+                    <img src="Onshape1.png" alt="Screenshot of a modern e-commerce website redesign" class="rounded-lg">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">3D Objects Modelling</h3>
+                        <p class="text-gray-400 text-sm">Skills: 3D Design& Modelling, Prototyping</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 (MySql) -->
+                <div class="gallery-item rounded-lg overflow-hidden bg-gray-800 shadow-xl">
+                    <img src="MySql1.png" alt="Screenshot of a real-time chat application interface" class="rounded-lg">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">MySQL</h3>
+                        <p class="text-gray-400 text-sm">Skills: Database managent, Database Integratio</p>
+                    </div>
+                </div>
+
+  
+
+                <!-- Gallery Item 4 (Branding/Graphics) -->
+                <div class="gallery-item rounded-lg overflow-hidden bg-gray-800 shadow-xl">
+                    <img src="Photoshop1.png" alt="Mockup of a complete brand identity kit" class="rounded-lg">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">Aura Brand Identity Kit</h3>
+                        <p class="text-gray-400 text-sm">Skills: Graphic Design, Typography</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 (Tall Mobile App) -->
+                <div class="gallery-item rounded-lg overflow-hidden bg-gray-800 shadow-xl">
+                    <img src="https://placehold.co/400x800/1f2937/fff?text=Mobile+App+Prototype" alt="Mobile application screen showing onboarding process" class="rounded-lg">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">Mobile App Prototype: "Connect"</h3>
+                        <p class="text-gray-400 text-sm">Skills: Product Design, User Research</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 (AI/Tech) -->
+                <div class="gallery-item rounded-lg overflow-hidden bg-gray-800 shadow-xl">
+                    <img src="https://placehold.co/600x400/1f2937/fff?text=ML+Deployment+Interface" alt="Interface for monitoring an deployed machine learning model" class="rounded-lg">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg">AI Model Deployment Interface</h3>
+                        <p class="text-gray-400 text-sm">Skills: Machine Learning, Cloud Deployment</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="text-center mt-16">
+                 <a href="#contact" class="inline-block px-6 py-3 border-2 border-accent-color text-accent-color font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition duration-300">
+                    See All Projects & Case Studies
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. About Section -->
+        <section id="about" class="bg-gray-800 py-20 md:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-6 text-white">About Morgan Muigai & Key Skills</h2>
+								<img src="456.png" alt="Morgan Muigai" class="w-24 h-24 mx-auto mb-6 rounded-full object-cover shadow-2xl border-4 border-gray-700">
+                <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-accent-color flex items-center justify-center text-gray-900 text-3xl font-bold"></div>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Hello, I'm Morgan Muigai. I currently an IT sudent in my second year in Muranga University Of Technology. My core expertise lies in 3D/CAD modelling, physical product deployment, data visualisatio, Sql and Python.I thrive on complex challenges and deliver solutions that are not only functional but also intuitive and visually compelling. Based in Muranga town currently, I'm actively seeking opportunities that require both creative vision and technical execution.
+                </p>
+                <div class="mt-8">
+                    <p class="text-lg font-semibold text-accent-color">Primary Technologies:</p>
+                    <p class="text-md text-gray-300 mt-2">SQL, Onshape, Python, AWS/Cloud Deployment</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Contact Section -->
+        <section id="contact" class="py-20 md:py-24 max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6 text-accent-color">Let's Connect</h2>
+            <p class="text-lg text-gray-300 mb-8">
+                Ready to discuss a new project, collaboration, or job opportunity? I'd love to hear from you.
+            </p>
+            
+            <div class="space-y-4">
+                <p class="text-xl font-semibold">Email: <a href="mailto:kai@example" class="text-accent-color hover:text-blue-400 transition">morganmuigai18@gmail.com</a></p>
+                <p class="text-xl font-semibold">Phone: <a href="tel:+15551234567" class="text-accent-color hover:text-blue-400 transition">0799876276</a></p>
+            </div>
+            
+            <div class="mt-10 flex justify-center space-x-6">
+          <!-- Social Icons (Placeholder SVGs/Text) -->
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>My Portfolio</title>
+		
+               <div class="social-links">
+        <a href="http://x.com/Berlin_Morg" target="_blank" rel="noopener noreferrer" class="social-icon twitter">
+            <i class="fab fa-x-twitter"></i> 
+        </a>
+
+        <a href="http://wa.me/+254791382570" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    </body>
+		<style>
+/* Basic styling for the container */
+.social-links {
+    display: flex;
+    justify-content: center; /* Centers the icons horizontally */
+    margin-top: 20px;
+    gap: 15px; /* Adds space between icons */
+}
+
+/* Style for the link element (the circle/square around the icon) */
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Makes them circular */
+    color: white; /* Icon color */
+    font-size: 20px;
+    text-decoration: none; /* Removes underline from links */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Custom colors for each platform */
+.social-icon.twitter {
+    background-color: #000000; /* Black for X/Twitter */
+}
+
+.social-icon.whatsapp {
+    background-color: #25D366; /* WhatsApp green */
+}
+
+/* Hover effect */
+.social-icon:hover {
+    opacity: 0.8; /* Slight fade on hover */
+}
+</style>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2025 Morgan Muigai. All rights reserved.</p>
+            <p class="mt-2">| Designed with Tailwind CSS</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple JavaScript for mobile navigation toggling (optional, but good practice)
+        const mobileMenuButton = document.querySelector('header button');
+        const navMenu = document.querySelector('header nav');
+
+        if (mobileMenuButton && navMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                // In a true single-page app, this would show/hide the navigation menu items
+                console.log('Mobile menu toggle activated.');
+                // For this static version, we just log the action. In a real scenario, you'd show a full-screen menu.
+            });
+        }
+    </script>
+</body>
+</html>
+
